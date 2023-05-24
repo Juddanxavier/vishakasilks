@@ -1,4 +1,4 @@
-<div class="grid md:grid-cols-2 h-screen place-items-center text-left md:mx-24 mx-12 my-12">
+<div class="grid md:grid-cols-2 h-screen place-items-center text-left md:mx-24 mx-6 my-12">
     <div class="grid">
         <p class="text-md mb-5 font-medium uppercase text-[#10271D]">What We Are</p>
         <p class="text-4xl mb-5 font-bold text-[#10271D]">
@@ -10,8 +10,8 @@
     <div class="grid"><img class="object-cover h-full w-full rounded-lg"
             src="<?php echo get_template_directory_uri(); ?>/assets/src/img/yarn.jpeg" alt="silk"></div>
 </div>
-<div class="grid md:grid-cols-2 place-items-center text-left md:mx-24 mx-12 my-12">
-    <div class="col mx-12">
+<div class="grid md:grid-cols-2 place-items-center text-left md:mx-24 mx-6 my-12">
+    <div class="col mx-6">
         <p class="text-md mb-5 font-medium uppercase text-[#10271D]">What We Are</p>
         <p class="text-4xl mb-5 font-bold text-[#10271D]">
             Leading Yarns and Silks
@@ -23,7 +23,7 @@
     </div>
     <div class="col content-baseline">
         <div class="grid md:grid-cols-2 gap-6 sm:grid-col">
-            <p class="mb-3 text-justify">
+            <p class="my-3 pt-5 text-justify">
 
                 Arni is a town located in the Tiruvannamalai district of Tamil Nadu, India, which is famous for its
                 silk weaving industry. Arni silks are known for their exquisite designs and high-quality
@@ -60,7 +60,7 @@ $post_list = new WP_Query(
     )
 );
 ?>
-<div class="flex flex-col text-center justify-center py-12 md:py-24 mx-12 md:mx-24">
+<div class="flex flex-col text-center justify-center py-12 md:py-24 mx-6 md:mx-24">
     <p class="uppercase font-bold pb-6 text-[#10271D]">Read articles</p>
     <p class="text-6xl font-bold text-[#10271D]">Latest from the Blog</p>
 
@@ -116,12 +116,13 @@ $post_list = new WP_Query(
 </div>
 
 </div>
-<div class="flex flex-row justify-around flex-shrink h-32 wavyline md:px-24 px-12">
-    <p class="text-4xl text-white flex justify-right items-center">Learn more about our wide range of yarns and silks.
+<div class="flex flex-row justify-around flex-shrink h-32 wavyline md:px-24 px-6">
+    <p class="text-xl md:text-4xl text-white flex justify-right items-center">Learn more about our wide range of yarns
+        and silks.
     </p>
     <div class="flex justify-center items-center">
         <button
-            class="border-2 border-gray-400 font-extrabold hover:bg-[color:var(--color-button-hero-hover)] text-white rounded-full py-2 px-5 text-xl font-bold">Get
+            class="border-2 border-gray-400 font-extrabold hover:bg-[color:var(--color-button-hero-hover)] text-white rounded-full py-2 px-5 md:text-xl text-sm font-bold">Get
             In Touch</button>
     </div>
 </div>

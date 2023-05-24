@@ -47,7 +47,7 @@
         </p>
     </div>
 </div>
-<div class="grid grid-cols-2 m-12 md:m-24">
+<div class="grid md:grid-cols-2 m-12 md:m-24">
     <div class="grid md:order-last md:p-5">
         <img class="rounded-lg mb-10" src="<?php echo get_template_directory_uri(); ?>/assets/src/img/weave.jpeg"
             alt="">
