@@ -19,7 +19,9 @@
                 <p>+91 9629855913</p>
                 <p>Vishakasilks@gmail.com</p>
             </div>
-            <div class="">1</div>
+            <div class="">
+                <?php dynamic_sidebar('footer_area_one'); ?>
+            </div>
         </div>
         <div class="grid md:grid-cols-2 mt-16">
             <div>

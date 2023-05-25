@@ -14,7 +14,21 @@ function register_my_menus()
 }
 add_action('init', 'register_my_menus');
 
+function register_widget_areas()
+{
 
+    register_sidebar(
+        array(
+            'name' => 'Footer area one',
+            'id' => 'footer_area_one',
+            'description' => 'This widget area discription',
+            'before_widget' => '<section class="footer-area footer-area-one">',
+            'after_widget' => '</section>',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>',
+        )
+    );
+}
 // function create_posttype()
 // {
 //     register_post_type(

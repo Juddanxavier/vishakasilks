@@ -23,7 +23,7 @@
     </div>
     <div class="col content-baseline">
         <div class="grid md:grid-cols-2 gap-6 sm:grid-col">
-            <p class="my-3 pt-5 text-justify">
+            <p class="my-3  pt-5 md:pt-0 text-justify">
 
                 Arni is a town located in the Tiruvannamalai district of Tamil Nadu, India, which is famous for its
                 silk weaving industry. Arni silks are known for their exquisite designs and high-quality
