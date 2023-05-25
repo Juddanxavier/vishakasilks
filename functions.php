@@ -29,6 +29,8 @@ function register_widget_areas()
         )
     );
 }
+add_action('widgets_init', 'register_widget_areas');
+
 // function create_posttype()
 // {
 //     register_post_type(
