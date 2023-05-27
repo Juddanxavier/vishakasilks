@@ -11,7 +11,7 @@
             src="<?php echo get_template_directory_uri(); ?>/assets/src/img/yarn.jpeg" alt="silk"></div>
 </div>
 <div class="grid md:grid-cols-2 place-items-center text-left md:mx-24 mx-6 my-12">
-    <div class="col mx-6">
+    <div class="col md:mx-6">
         <p class="text-md mb-5 font-medium uppercase text-[#10271D]">What We Are</p>
         <p class="text-4xl mb-5 font-bold text-[#10271D]">
             Leading Yarns and Silks
@@ -23,7 +23,7 @@
     </div>
     <div class="col content-baseline">
         <div class="grid md:grid-cols-2 gap-6 sm:grid-col">
-            <p class="my-3  pt-5 md:pt-0 text-justify">
+            <p class="my-3 md:pt-0 text-justify">
 
                 Arni is a town located in the Tiruvannamalai district of Tamil Nadu, India, which is famous for its
                 silk weaving industry. Arni silks are known for their exquisite designs and high-quality

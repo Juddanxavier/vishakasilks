@@ -3,7 +3,7 @@
         <img class="object-cover h-full w-full rounded-r-lg"
             src="<?php echo get_template_directory_uri(); ?>/assets/src/img/yellowsaree.jpeg" alt="silk">
     </div>
-    <div class="col md:mx-24 mx-12 md:h-screen ">
+    <div class="col md:mx-24 mx-6 md:h-screen ">
         <div class="md:flex md:flex-wrap md:h-screen md:content-center">
             <p class="font-bold text-5xl py-5 text-[#10271D]">Bringing You the Best Yarns
                 and Silks from Around the World.</p>
