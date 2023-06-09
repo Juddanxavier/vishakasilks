@@ -75,7 +75,7 @@ body {
 }
 
 .menu-header {
-    color: #10271D;
+    color: #fff;
     font-weight: 600;
     list-style-type: none;
     margin: 0;
@@ -97,7 +97,7 @@ body {
 
 .menu-header ul li a {
     display: block;
-    color: #22523D;
+    color: #fff;
     padding-left: 30px;
     float: left;
 }
@@ -179,4 +179,20 @@ ul.page-numbers li {
 
 .page-numbers:hover {
     text-decoration: none
+}
+
+.scrolled {
+    background-color: #3B715A;
+}
+
+.logo {
+    display: none;
+}
+
+.logo-text {
+    display: block;
+}
+
+.graditen {
+    background: linear-gradient(-45deg, rgba(15, 52, 67, .7), rgba(52, 232, 158, .5));
 }

@@ -42,6 +42,25 @@
 </footer>
 </div>
 </div>
+<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+<script>
+    window.addEventListener('scroll', function () {
+        var navbar = document.querySelector('#navbar');
+        var logo = document.querySelector('.logo-display')
+        var logoText = document.querySelector('#logotext')
+        var scrolled = window.scrollY > 0;
+
+        if (scrolled) {
+            navbar.classList.add('scrolled');
+            logo.classList.add('logo')
+            logoText.classList.remove('logo-text')
+        } else {
+            navbar.classList.remove('scrolled');
+            logo.classList.remove('logo')
+            logoText.classList.add('logo-text')
+        }
+    });
+</script>
 <?php wp_footer(); ?>
 </body>
 

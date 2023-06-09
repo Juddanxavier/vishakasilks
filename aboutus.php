@@ -1,6 +1,6 @@
 <?php /* Template Name: About page */?>
 <?php get_header(); ?>
-<div class="flex flex-col h-[26rem] w-full relative justify-center content-center">
+<div class="flex flex-col -mt-[125px] h-[26rem] w-full relative justify-center content-center">
     <img class="w-full object-cover min-h-0" src="<?php echo get_template_directory_uri(); ?>/assets/src/img/cotton.jpg"
         alt="yarnleo">
     <div class="absolute">
