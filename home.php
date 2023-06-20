@@ -6,7 +6,7 @@
             <img class="w-full object-cover min-h-0"
                 src="<?php echo get_template_directory_uri(); ?>/assets/src/img/yarnleo.jpg" alt="yarnleo">
             <div class="absolute">
-                <p class=" text-6xl font-bold mx-12 text-white">Blog</p>
+                <p class=" text-6xl font-bold mx-12 text-white">Blogs</p>
             </div>
         </div>
         <div class="grid md:grid-cols-3 gap-6 mx-12 md:mx-24 md:my-24 my-12">
