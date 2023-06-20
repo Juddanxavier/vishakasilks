@@ -196,3 +196,7 @@ ul.page-numbers li {
 .graditen {
     background: linear-gradient(-45deg, rgba(15, 52, 67, .7), rgba(52, 232, 158, .5));
 }
+
+#menu-toggle:checked+#menu {
+    display: block;
+}

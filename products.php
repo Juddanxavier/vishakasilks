@@ -1,70 +1,66 @@
 <?php /* Template Name: Product Page */?>
 <?php get_header(); ?>
-<div class="flex flex-col h-[26rem] w-full relative justify-center content-center">
-    <img class="w-full object-cover min-h-0" src="<?php echo get_template_directory_uri(); ?>/assets/src/img/cotton.jpg"
+<div class="flex flex-col h-[38rem] w-full relative justify-center content-center -mt-[120px] z-0">
+    <img class="w-full object-cover min-h-0" src="<?php echo get_template_directory_uri(); ?>/assets/src/img/about.jpg"
         alt="yarnleo">
     <div class="absolute">
-        <p class=" text-6xl font-bold mx-12 text-white">About Us</p>
+        <p class=" text-6xl font-bold mx-12 text-white">Our Silk Saree Collection</p>
     </div>
 </div>
-<div class="flex sticky top-0 h-24  px-12 md:px-24 bg-white">
-    <p class="my-8 text-5xl font-bold">Yarn</p>
-</div>
-<div class="min-h-screen">
-    <div class="flex flex-col">
-        <div class="flex my-10 md:mx-24 mx-12">
-            <?php
-            $args = array('post_type' => 'products', 'posts_per_page' => 10);
-            $the_query = new WP_Query($args);
-            ?>
-            <?php if ($the_query->have_posts()): ?>
-                <?php while ($the_query->have_posts()):
-                    $the_query->the_post(); ?>
-                    <h2>
-                        <?php the_title(); ?>
-                    </h2>
-                    <div class="entry-content">
-                        <?php the_content(); ?>
-                    </div>
-                <?php endwhile;
-                wp_reset_postdata(); ?>
-            <?php else: ?>
-                <p>
-                    <?php _e('Sorry, no posts matched your criteria.'); ?>
-                </p>
-            <?php endif; ?>
-        </div>
-    </div>
-</div>
-<div class="flex sticky top-0 h-24 py-10 px-12 md:px-24 bg-white">
-    <p class="text-5xl font-bold">Silk</p>
-</div>
-<div class="h-screen">
-    <div class="min-h-screen">
-        <div class="flex flex-col">
-            <div class="flex my-10 md:mx-24 mx-12">
-                <?php
-                $args = array('post_type' => 'products', 'posts_per_page' => 10);
-                $the_query = new WP_Query($args);
+
+<div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8 cursor-pointer">
+        <?php
+        $paged = get_query_var('paged');
+
+        $args = array(
+            'post_type' => 'products',
+            'paged' => $paged,
+            'orderby' => 'date',
+            'order' => 'ASC',
+            'posts_per_page' => 6,
+            'post_status' => 'publish',
+        );
+        $the_query = new WP_Query($args);
+        if ($the_query->have_posts()) {
+            while ($the_query->have_posts()) {
+                $the_query->the_post();
                 ?>
-                <?php if ($the_query->have_posts()): ?>
-                    <?php while ($the_query->have_posts()):
-                        $the_query->the_post(); ?>
-                        <h2>
+                <a href="<?php the_permalink(); ?>">
+                    <section
+                        class="p-5 py-10 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
+                        <img src="https://www.dropbox.com/s/mlor33hzk73rh0c/x14423.png?dl=1" alt="">
+
+                        <h1 class="text-3xl my-5 break-all">
                             <?php the_title(); ?>
-                        </h2>
-                        <div class="entry-content">
-                            <?php the_content(); ?>
-                        </div>
-                    <?php endwhile;
-                    wp_reset_postdata(); ?>
-                <?php else: ?>
-                    <p>
-                        <?php _e('Sorry, no posts matched your criteria.'); ?>
-                    </p>
-                <?php endif; ?>
-            </div>
-        </div>
+                        </h1>
+                        <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, incidunt!</p>
+                        <h2 class="font-semibold mb-5">$29.99</h2>
+                        <button class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">See More</button>
+                    </section>
+                </a>
+                <?php
+            }
+
+        }
+
+        wp_reset_query();
+        ?>
+
+
+    </div>
+    <div class="flex justify-center my-10">
+        <?php
+        echo '<div class="flex justify-center">' . paginate_links(
+            array(
+                'total' => $the_query->max_num_pages,
+                'before_page_number' => '<div class="px-3 py-1 rounded-md mr-2">',
+                'after_page_number' => '</div>',
+                'prev_text' => '<div class="bg-gray-200 px-3 py-1 rounded-md mr-2">Previous</div>',
+                'next_text' => '<div class="bg-gray-200 px-3 py-1 rounded-md">Next</div>'
+            )
+        ) . '</div>';
+        ?>
     </div>
 </div>
 

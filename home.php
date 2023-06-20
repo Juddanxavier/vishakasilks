@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <div id="primary">
     <main>
-        <div class="flex flex-col h-64 w-full relative justify-center content-center">
+        <div class="flex flex-col h-[34rem] w-full relative justify-center content-center">
             <img class="w-full object-cover min-h-0"
                 src="<?php echo get_template_directory_uri(); ?>/assets/src/img/yarnleo.jpg" alt="yarnleo">
             <div class="absolute">

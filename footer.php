@@ -42,23 +42,43 @@
 </footer>
 </div>
 </div>
-<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-<script>
-    window.addEventListener('scroll', function () {
-        var navbar = document.querySelector('#navbar');
-        var logo = document.querySelector('.logo-display')
-        var logoText = document.querySelector('#logotext')
-        var scrolled = window.scrollY > 0;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
-        if (scrolled) {
-            navbar.classList.add('scrolled');
-            logo.classList.add('logo')
-            logoText.classList.remove('logo-text')
+<script>
+    // Logo change on scroll
+    window.addEventListener('scroll', function () {
+        var logo = document.getElementById('logo');
+        var menuToggle = document.getElementById('menu-toggle');
+        var navgreen = document.getElementById('nav')
+        var logotext = document.getElementById('logotext')
+        if (window.scrollY > 0) {
+            logo.classList.add('hidden')
+            navgreen.classList.add('bg-green-700')
+            logotext.classList.remove('hidden')
         } else {
-            navbar.classList.remove('scrolled');
-            logo.classList.remove('logo')
-            logoText.classList.add('logo-text')
+            logo.classList.remove('hidden')
+            navgreen.classList.remove('bg-green-700')
+            logotext.classList.add('hidden')
         }
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        var navgreen = document.getElementById("nav");
+        navgreen.classList.remove("bg-green-700");
+    });
+    //      Responsive menu toggle
+    // var menuToggle = document.getElementById('menu-toggle');
+    // var menu = document.getElementById('menu');
+
+    // menuToggle.addEventListener('click', function () {
+    //     menu.classList.toggle('hidden');
+    // });
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileNavbar = document.getElementById("mobile-menu-button");
+        const mobileMenuButton = document.getElementById("nav");
+
+        mobileMenuButton.addEventListener("click", function () {
+            mobileNavbar.classList.toggle('hidden');
+        });
     });
 </script>
 <?php wp_footer(); ?>

@@ -1,7 +1,6 @@
-<div class="">
+<div>
     <div class="h-[38rem] flex flex-row justify-center content-center flex-wrap text-center bg-green-200 relative ">
         <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID), 'thumbnail'); ?>
-
         <img class="object-cover h-full w-full" src="<?php echo $url; ?> " alt="<?php the_title(); ?>">
         <div class="absolute self-center">
             <p class="text-6xl font-bold mb-4 text-white">
@@ -13,7 +12,7 @@
             </p>
         </div>
     </div>
-    <div class="md:w-2/5 mx-12 md:mx-auto my-12 md:my-24">
+    <div class="md:w-2/5 mx-12 md:mx-auto my-12 md:my-24 h-auto">
         <span class="first-letter:text-7xl first-letter:font-bold first-letter:text-black
     first-letter:mr-3  first-letter:float-left leading-loose text-gray-600">
             <?php the_content(); ?>
@@ -44,7 +43,7 @@
                             $my_query->the_post(); ?>
                             <div class="flex">
                                 <a class="text-xl font-bold" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to
-                        <?php the_title_attribute(); ?>">
+                                <?php the_title_attribute(); ?>">
                                     <span class="my-8">
                                         <?php the_post_thumbnail('medium_large', array('class' => 'object-scale-down h-48 w-full rounded-lg')); ?>
                                     </span>
@@ -63,5 +62,5 @@
             </div>
         </div>
     </div>
-
+</div>
 </div>
