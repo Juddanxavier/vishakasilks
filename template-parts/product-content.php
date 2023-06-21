@@ -3,7 +3,7 @@
         <?php the_title(); ?>
     </p>
 </div>
-<div class="grid md:grid-cols-2 gap-8 mx-12 md:mx-24 py-12">
+<div class="mx-12 md:mx-24 py-12">
 
     <?php
     the_content();
