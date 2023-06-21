@@ -74,3 +74,7 @@
 
 
 </div>
+<div class="my-5 mx-12 md:mx-24">
+    <?php get_template_part('template-parts/sharingbox'); ?>
+
+</div>
