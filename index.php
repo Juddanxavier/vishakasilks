@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="md:mx-24 mx-12">
-    <?php the_content(); ?>
+<div class="text-xl">
+    <p>Something Went Wrong!</p>
 </div>
 <?php get_footer(); ?>
