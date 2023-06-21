@@ -26,7 +26,8 @@
             </p>
             <p>
                 <?php
-                the_content();
+                $meta_print_value = get_post_meta(get_the_ID(), 'Color', true);
+                echo ($meta_print_value);
                 ?>
             </p>
         </div>
