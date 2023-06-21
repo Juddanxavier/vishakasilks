@@ -6,7 +6,7 @@
 <div class="mx-12 md:mx-24 py-12">
 
     <?php
-    the_content();
+    do_action('woocommerce_after_main_content');
     ?>
 
 </div>
