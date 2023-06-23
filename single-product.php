@@ -1,4 +1,4 @@
-<div class="h-[18rem] flex flex-row justify-center content-center flex-wrap text-center bg-green-200 relative ">
+<div class="h-[18rem] flex flex-row justify-center content-center flex-wrap text-center bg-green-900 relative ">
     <div class="absolute self-center">
         <p class="text-6xl font-bold mb-4 text-white">
             <?php the_title(); ?>
@@ -28,41 +28,43 @@ if (!defined('ABSPATH')) {
 }
 
 get_header('shop'); ?>
+<div class="mx-12 md:mx-24 my-12">
 
-<?php
-/**
- * woocommerce_before_main_content hook.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- */
-do_action('woocommerce_before_main_content');
-?>
+    <?php
+    /**
+     * woocommerce_before_main_content hook.
+     *
+     * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+     * @hooked woocommerce_breadcrumb - 20
+     */
+    do_action('woocommerce_before_main_content');
+    ?>
 
-<?php while (have_posts()): ?>
-    <?php the_post(); ?>
+    <?php while (have_posts()): ?>
+        <?php the_post(); ?>
 
-    <?php wc_get_template_part('content', 'single-product'); ?>
+        <?php wc_get_template_part('content', 'single-product'); ?>
 
-<?php endwhile; // end of the loop. ?>
+    <?php endwhile; // end of the loop. ?>
 
-<?php
-/**
- * woocommerce_after_main_content hook.
- *
- * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
- */
-do_action('woocommerce_after_main_content');
-?>
+    <?php
+    /**
+     * woocommerce_after_main_content hook.
+     *
+     * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+     */
+    do_action('woocommerce_after_main_content');
+    ?>
 
-<?php
-/**
- * woocommerce_sidebar hook.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action('woocommerce_sidebar');
-?>
+    <?php
+    /**
+     * woocommerce_sidebar hook.
+     *
+     * @hooked woocommerce_get_sidebar - 10
+     */
+    do_action('woocommerce_sidebar');
+    ?>
+</div>
 
 <?php
 get_footer('shop');
