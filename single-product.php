@@ -28,7 +28,7 @@ if (!defined('ABSPATH')) {
 }
 
 get_header('shop'); ?>
-<div class="mx-12 md:mx-24 my-12">
+<div class="mx-12 md:mx-24">
 
     <?php
     /**
@@ -65,8 +65,3 @@ get_header('shop'); ?>
     do_action('woocommerce_sidebar');
     ?>
 </div>
-
-<?php
-get_footer('shop');
-
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
