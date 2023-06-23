@@ -1,3 +1,16 @@
+<div class="h-[38rem] flex flex-row justify-center content-center flex-wrap text-center bg-green-200 relative ">
+    <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID), 'thumbnail'); ?>
+    <img class="object-cover h-full w-full" src="<?php echo $url; ?> " alt="<?php the_title(); ?>">
+    <div class="absolute self-center">
+        <p class="text-6xl font-bold mb-4 text-white">
+            <?php the_title(); ?>
+        </p>
+        <p class="text-md font-semibold uppercase text-white">
+            <?php the_author(); ?> .
+            <?php the_date(); ?>
+        </p>
+    </div>
+</div>
 <?php
 /**
  * The Template for displaying all single products
