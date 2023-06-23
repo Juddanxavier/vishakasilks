@@ -3,22 +3,74 @@
         <?php the_title(); ?>
     </p>
 </div>
-<?php
-do_action('woocommerce_before_main_content');
-?>
-<?php
-while (have_posts()): ?>
-    <?php the_post(); ?>
-    <?php wc_get_template_part('content', 'single-product'); ?>
-<?php endwhile;
-?>
-<?php
-do_action('woocommerce_after_main_content');
-?>
+<div class="grid md:grid-cols-2 gap-8 mx-12 md:mx-24 py-12">
+    <div>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <?php the_post_thumbnail('medium_large', array('class' => 'rounded-lg')); ?>
+        </a>
+    </div>
+    <div class="mb-12">
+        <div class="mb-5">
+            <p class="text-font capitalize text-xl mb-4">
+                Description
+            </p>
+            <p>
+                <?php
+                the_content();
+                ?>
+            </p>
+        </div>
+        <div class="mb-5">
+            <p class="text-font capitalize text-xl mb-4">
+                Color
+            </p>
+            <p>
+                <?php
+                $meta_print_value = get_post_meta(get_the_ID(), 'Color', true);
+                echo ($meta_print_value);
+                ?>
+            </p>
+        </div>
+        <div class="mb-5">
+            <p class="text-font capitalize text-xl mb-4">
+                Place of Origin
+            </p>
+            <p>
+                <?php
+                $meta_print_value = get_post_meta(get_the_ID(), 'place_of_origin', true);
+                echo ($meta_print_value);
+                ?>
+            </p>
+        </div>
+        <div class="mb-5">
+            <p class="text-font capitalize text-xl ">
+                Design Details
+            </p>
+            <p>
+                <?php
+                $meta_print_value = get_post_meta(get_the_ID(), 'design_detail', true);
+                echo ($meta_print_value);
+                ?>
+            </p>
+        </div>
+        <div class="mb-5">
+            <p class="text-font capitalize text-xl">
+                Size & Fit
+            </p>
+            <p>
+                <?php
+                $meta_print_value = get_post_meta(get_the_ID(), 'size_and_fit', true);
+                echo ($meta_print_value);
+                ?>
+            </p>
+        </div>
+        <div class="flex justify-right">
+            <button type="button"
+                class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enquire
+                Now</button>
 
+        </div>
+    </div>
 
-</div>
-<div class="my-5 mx-12 md:mx-24">
-    <?php get_template_part('template-parts/sharingbox'); ?>
 
 </div>
