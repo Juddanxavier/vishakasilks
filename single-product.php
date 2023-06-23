@@ -1,4 +1,5 @@
-<div class="h-[18rem] flex flex-row justify-center content-center flex-wrap text-center bg-green-600 relative ">
+<div
+    class="h-[18rem] flex flex-row wavyline justify-center content-center flex-wrap text-center bg-green-600 relative ">
     <div class="absolute self-center">
         <p class="text-6xl font-bold mb-4 text-white">
             <?php the_title(); ?>
