@@ -1,4 +1,4 @@
-<div class="h-[18rem] flex flex-row justify-center content-center flex-wrap text-center bg-green-900 relative ">
+<div class="h-[18rem] flex flex-row justify-center content-center flex-wrap text-center bg-green-600 relative ">
     <div class="absolute self-center">
         <p class="text-6xl font-bold mb-4 text-white">
             <?php the_title(); ?>
@@ -28,9 +28,9 @@ if (!defined('ABSPATH')) {
 }
 
 get_header('shop'); ?>
-<div class="mx-12 md:mx-24">
+<div class="mx-12 md:mx-24 my-12">
 
-    <?php
+    <!-- <?php
     /**
      * woocommerce_before_main_content hook.
      *
@@ -38,7 +38,7 @@ get_header('shop'); ?>
      * @hooked woocommerce_breadcrumb - 20
      */
     do_action('woocommerce_before_main_content');
-    ?>
+    ?> -->
 
     <?php while (have_posts()): ?>
         <?php the_post(); ?>
