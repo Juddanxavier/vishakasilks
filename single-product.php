@@ -39,14 +39,12 @@ get_header('shop'); ?>
      */
     do_action('woocommerce_before_main_content');
     ?> -->
-    <div class="grid grid-cols-2">
-        <?php while (have_posts()): ?>
-            <?php the_post(); ?>
+    <?php while (have_posts()): ?>
+        <?php the_post(); ?>
 
-            <?php wc_get_template_part('content', 'single-product'); ?>
+        <?php wc_get_template_part('content', 'single-product'); ?>
 
-        <?php endwhile; // end of the loop. ?>
-    </div>
+    <?php endwhile; // end of the loop. ?>
 
 
     <?php
