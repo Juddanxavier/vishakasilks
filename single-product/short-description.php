@@ -15,15 +15,15 @@
  * @version 3.3.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
 global $post;
 
-$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
+$short_description = apply_filters('woocommerce_product_description_heading', __('Description', 'woocommerce'));
 
-if ( ! $short_description ) {
+if (!$short_description) {
 	return;
 }
 
