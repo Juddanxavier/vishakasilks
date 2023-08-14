@@ -6,6 +6,8 @@ wp_enqueue_style('VISHAKA-tailwind', get_template_directory_uri() . '/assets/dis
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+
 function register_my_menus()
 {
     register_nav_menus(
