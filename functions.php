@@ -4,16 +4,6 @@ add_action('wp_enqueue_scripts', function () {
 });
 wp_enqueue_style('VISHAKA-tailwind', get_template_directory_uri() . '/assets/dist/main.bundle.css', array());
 
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
-
-add_filter('woocommerce_product_tabs', 'woo_remove_product_tabs', 98);
-function woo_remove_product_tabs($tabs)
-{
-    unset($tabs['description']); // Remove the Description tab
-    $tabs['reviews']['title'] = __('Ratings'); // Rename the Reviews tab
-    $tabs['additional_information']['priority'] = 5; // Additional information at first
-    return $tabs;
-}
 function register_my_menus()
 {
     register_nav_menus(
@@ -23,7 +13,6 @@ function register_my_menus()
     );
 }
 add_action('init', 'register_my_menus');
-
 
 function register_widget_areas()
 {
