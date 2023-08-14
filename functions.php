@@ -52,53 +52,53 @@ add_action('widgets_init', 'register_widget_areas');
 //     );
 // }
 
-function cw_post_type_products()
-{
-    $supports = array(
-        'title',
-        // post title
-        'editor',
-        // post content
-        'author',
-        // post author
-        'thumbnail',
-        // featured images
-        // 'excerpt',
-        // post excerpt
-        'custom-fields',
-        // custom fields
-        // 'comments',
-        // post comments
-        'revisions',
-        // post revisions
-        'post-formats', // post formats
-    );
-    $labels = array(
-        'name' => _x('products', 'plural'),
-        'singular_name' => _x('product', 'singular'),
-        'menu_name' => _x('products', 'admin menu'),
-        'name_admin_bar' => _x('products', 'admin bar'),
-        'add_new' => _x('Add New', 'add new'),
-        'add_new_item' => __('Add New Products'),
-        'new_item' => __('New Products'),
-        'edit_item' => __('Edit Products'),
-        'view_item' => __('View Products'),
-        'all_items' => __('All Products'),
-        'search_items' => __('Search Products'),
-        'not_found' => __('No Products found.'),
-    );
-    $args = array(
-        'supports' => $supports,
-        'labels' => $labels,
-        'public' => true,
-        'query_var' => true,
-        'rewrite' => array('slug' => 'products'),
-        'has_archive' => true,
-        'hierarchical' => false,
-    );
-    register_post_type('products', $args);
-}
-add_action('init', 'cw_post_type_products');
+// function cw_post_type_products()
+// {
+//     $supports = array(
+//         'title',
+//         // post title
+//         'editor',
+//         // post content
+//         'author',
+//         // post author
+//         'thumbnail',
+//         // featured images
+//         // 'excerpt',
+//         // post excerpt
+//         'custom-fields',
+//         // custom fields
+//         // 'comments',
+//         // post comments
+//         'revisions',
+//         // post revisions
+//         'post-formats', // post formats
+//     );
+//     $labels = array(
+//         'name' => _x('products', 'plural'),
+//         'singular_name' => _x('product', 'singular'),
+//         'menu_name' => _x('products', 'admin menu'),
+//         'name_admin_bar' => _x('products', 'admin bar'),
+//         'add_new' => _x('Add New', 'add new'),
+//         'add_new_item' => __('Add New Products'),
+//         'new_item' => __('New Products'),
+//         'edit_item' => __('Edit Products'),
+//         'view_item' => __('View Products'),
+//         'all_items' => __('All Products'),
+//         'search_items' => __('Search Products'),
+//         'not_found' => __('No Products found.'),
+//     );
+//     $args = array(
+//         'supports' => $supports,
+//         'labels' => $labels,
+//         'public' => true,
+//         'query_var' => true,
+//         'rewrite' => array('slug' => 'products'),
+//         'has_archive' => true,
+//         'hierarchical' => false,
+//     );
+//     register_post_type('products', $args);
+// }
+// add_action('init', 'cw_post_type_products');
 
 function themename_custom_logo_setup()
 {
