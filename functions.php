@@ -4,6 +4,8 @@ add_action('wp_enqueue_scripts', function () {
 });
 wp_enqueue_style('VISHAKA-tailwind', get_template_directory_uri() . '/assets/dist/main.bundle.css', array());
 
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
 function register_my_menus()
 {
     register_nav_menus(
