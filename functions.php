@@ -220,7 +220,6 @@ function wpdocs_excerpt_more($more)
 add_filter('excerpt_more', 'wpdocs_excerpt_more');
 add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
 add_theme_support('post-thumbnails');
-// add_action('init', 'create_posttype');
 
 function add_woocommerce_support()
 {
