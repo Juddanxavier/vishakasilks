@@ -127,12 +127,13 @@
           <p class="p-4 text-2xl">
             <?php bloginfo('name'); ?>
           </p>
-          <ul class="px-4 font-bold">
-            <li class="py-2"><a href="#" class="block hover:text-gray-300">Home</a></li>
-            <li class="py-2"><a href="#" class="block hover:text-gray-300">About</a></li>
-            <li class="py-2"><a href="#" class="block hover:text-gray-300">Services</a></li>
-            <li class="py-2"><a href="#" class="block hover:text-gray-300">Contact</a></li>
-          </ul>
+          <?php wp_nav_menu(
+            array(
+              'menu_class' => 'menu-header lg:flex gap-6 text-[#ffffff]',
+              'theme_location' => 'header'
+
+            )
+          ); ?>
         </div>
     </nav>
   </header>
