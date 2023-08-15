@@ -35,85 +35,35 @@ function register_widget_areas()
 }
 add_action('widgets_init', 'register_widget_areas');
 
-function njengah_woo_attribute()
+add_action('woocommerce_after_shop_loop_item_title', 'display_shop_loop_product_attributes');
+function display_shop_loop_product_attributes()
 {
-
     global $product;
 
-    $attributes = $product->get_attributes();
-
-    if (!$attributes) {
-
+    // Only for simple products
+    if (!$product->is_type('simple'))
         return;
 
+    // Define you product attribute taxonomies in the array
+    $product_attribute_taxonomies = array('pa_country', 'pa_class', 'pa_faction', 'pa_gender');
+    $attr_output = array(); // Initializing
+
+    // Loop through your defined product attribute taxonomies
+    foreach ($product_attribute_taxonomies as $taxonomy) {
+        if (taxonomy_exists($taxonomy)) {
+            $label_name = wc_attribute_label($taxonomy, $product);
+
+            $term_names = $product->get_attribute($taxonomy);
+
+            if (!empty($term_names)) {
+                $attr_output[] = '<span class="' . $taxonomy . '">' . $label_name . ': ' . $term_names . '</span>';
+            }
+        }
     }
 
-    $display_result = '';
-
-
-    foreach ($attributes as $attribute) {
-
-        if ($attribute->get_variation()) {
-            continue;
-        }
-
-        $name = $attribute->get_name();
-
-        if ($attribute->is_taxonomy()) {
-
-            $terms = wp_get_post_terms($product->get_id(), $name, 'all');
-
-            $njengahtax = $terms[0]->taxonomy;
-
-            $njengah_object_taxonomy = get_taxonomy($njengahtax);
-
-            if (isset($njengah_object_taxonomy->labels->singular_name)) {
-
-                $tax_label = $njengah_object_taxonomy->labels->singular_name;
-
-            } elseif (isset($njengah_object_taxonomy->label)) {
-
-                $tax_label = $njengah_object_taxonomy->label;
-
-                if (0 === strpos($tax_label, 'Product ')) {
-
-                    $tax_label = substr($tax_label, 8);
-
-                }
-
-            }
-
-            $display_result .= $tax_label . ': ';
-
-            $tax_terms = array();
-
-            foreach ($terms as $term) {
-
-                $single_term = esc_html($term->name);
-
-                array_push($tax_terms, $single_term);
-
-            }
-
-            $display_result .= implode(', ', $tax_terms) . '<br />';
-
-
-
-
-        } else {
-
-            $display_result .= $name . ': ';
-
-            $display_result .= esc_html(implode(', ', $attribute->get_options())) . '<br />';
-
-        }
-
-    }
-
-    echo $display_result;
-
+    // Output
+    echo '<div class="product-attributes">' . implode('<br>', $attr_output) . '</div>';
 }
-add_action('woocommerce_single_product_summary', 'njengah_woo_attribute', 25);
 // function create_posttype()
 // {
 //     register_post_type(
