@@ -127,13 +127,15 @@
           <p class="p-4 text-2xl">
             <?php bloginfo('name'); ?>
           </p>
-          <?php wp_nav_menu(
-            array(
-              'menu_class' => 'menu-header lg:flex gap-6 text-[#ffffff]',
-              'theme_location' => 'header'
+          <div class="p-4">
+            <?php wp_nav_menu(
+              array(
+                'menu_class' => 'menu-header lg:flex gap-6 text-[#ffffff]',
+                'theme_location' => 'header'
 
-            )
-          ); ?>
+              )
+            ); ?>
+          </div>
         </div>
     </nav>
   </header>
