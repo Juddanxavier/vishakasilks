@@ -35,12 +35,36 @@ function register_widget_areas()
 }
 add_action('widgets_init', 'register_widget_areas');
 
-add_action('woocommerce_product_meta_start', function () {
+add_action('woocommerce_shop_loop_item_title', 'custom_attributes_display', 20);
+function custom_attributes_display()
+{
 
-    global $product;
-    echo wc_display_product_attributes($product);
+    // Just for product category archives pages
+    if (is_product_category()) {
+        global $product;
 
-});
+        // the array of attributes names
+        $attribute_names = array('pa_nopeus', 'pa_liito', 'pa_vakaus', 'pa_feidi');
+        foreach ($attribute_names as $key => $attribute_name) {
+
+            // For WooCommerce version 3.0+
+            $product_id = $product->get_id(); // WC 3.0+
+
+            // Getting the value of an attribute (OK for WC 3.0+)
+            $wc_term = wc_get_product_terms($product_id, $attribute_name);
+            $attribute_value = array_shift($wc_term);
+
+            // Displays only if attribute exist for the product
+            if (!empty($attribute_value) || '0' == $attribute_value) { // Updated
+                echo $attribute_value;
+
+                // Separating each number by a " / "
+                if ($key < 3)
+                    echo ' / ';
+            }
+        }
+    }
+}
 // function create_posttype()
 // {
 //     register_post_type(
