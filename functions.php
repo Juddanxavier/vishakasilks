@@ -35,35 +35,12 @@ function register_widget_areas()
 }
 add_action('widgets_init', 'register_widget_areas');
 
-add_action('woocommerce_after_shop_loop_item_title', 'display_shop_loop_product_attributes');
-function display_shop_loop_product_attributes()
-{
+add_action('woocommerce_product_meta_start', function () {
+
     global $product;
+    echo wc_display_product_attributes($product);
 
-    // Only for simple products
-    if (!$product->is_type('simple'))
-        return;
-
-    // Define you product attribute taxonomies in the array
-    $product_attribute_taxonomies = array('pa_country', 'pa_class', 'pa_faction', 'pa_gender');
-    $attr_output = array(); // Initializing
-
-    // Loop through your defined product attribute taxonomies
-    foreach ($product_attribute_taxonomies as $taxonomy) {
-        if (taxonomy_exists($taxonomy)) {
-            $label_name = wc_attribute_label($taxonomy, $product);
-
-            $term_names = $product->get_attribute($taxonomy);
-
-            if (!empty($term_names)) {
-                $attr_output[] = '<span class="' . $taxonomy . '">' . $label_name . ': ' . $term_names . '</span>';
-            }
-        }
-    }
-
-    // Output
-    echo '<div class="product-attributes">' . implode('<br>', $attr_output) . '</div>';
-}
+});
 // function create_posttype()
 // {
 //     register_post_type(
