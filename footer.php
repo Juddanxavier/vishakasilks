@@ -2,7 +2,7 @@
     <div class="grid grid-row-auto text-white bg-[color:var(--theme-color-footer)] px-12 py-16">
         <div class="grid md:grid-cols-2 mb-14 pb-4 border-b-2 border-gray-400 border-opacity-25">
             <div class="flex">Vishaka Silks</div>
-            <div class="flex flex-row">
+            <div class="flex flex-row-reverse">
                 <?php wp_nav_menu(
                     array(
                         'menu_class' => 'menu-header flex gap-6 text-[#ffffff]',
